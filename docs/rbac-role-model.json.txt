@@ -1,0 +1,27 @@
+{
+  "roles": [
+    {
+      "roleName": "Employee",
+      "description": "Base role for all full-time employees",
+      "entitlements": ["EmailAccess", "IntranetAccess"]
+    },
+    {
+      "roleName": "Finance Analyst",
+      "description": "Role for finance department analysts",
+      "inherits": ["Employee"],
+      "entitlements": ["SAPFinanceAccess", "FinancialReportingTool"]
+    },
+    {
+      "roleName": "Engineering Developer",
+      "description": "Role for software developers in engineering",
+      "inherits": ["Employee"],
+      "entitlements": ["GitHubAccess", "JiraAccess", "DevServerAccess"]
+    },
+    {
+      "roleName": "Manager",
+      "description": "Managerial role with access to reporting tools",
+      "inherits": ["Employee"],
+      "entitlements": ["DashboardAccess", "UserReviewTool"]
+    }
+  ]
+}

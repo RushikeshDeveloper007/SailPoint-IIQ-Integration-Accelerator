@@ -1,20 +1,16 @@
-# SailPoint-IIQ-Integration-Accelerator
+# SailPoint IIQ Integration Accelerator
 
-A real-world simulation of integrating SailPoint IdentityIQ with an external enterprise application. This project includes custom connectors, provisioning logic, and lifecycle workflows — ideal for demonstrating hands-on IAM engineering skills.
+An enterprise-grade SailPoint IdentityIQ integration project that simulates real-world identity governance, provisioning automation, and compliance workflows.
 
----
+## What's Included
 
-## 🔧 What This Project Covers
+- Custom REST Connector – Java-based SailPoint IIQ connector for REST API integration
+- Joiner-Mover-Leaver Automation – Beanshell rules for provisioning and lifecycle management
+- Mock Target System – Node.js API simulating a real HR/business app
+- Test Data Generator – Java-based script to simulate HR-driven identity events
+- DSAR Generator – Script to simulate privacy compliance (GDPR, CCPA)
+- RBAC Role Modeling – JSON-based business-aligned access structure
+- Access Review Template – Sample review campaign to simulate certification
 
-- Custom SailPoint IIQ connector in Java for REST API integration
-- Beanshell provisioning and correlation rules
-- Joiner-Mover-Leaver (JML) lifecycle workflows
-- Mock REST API application to simulate a business system
-- Access reviews and RBAC modeling
-- DSAR (Data Subject Access Request) automation for GDPR/CCPA
-- Audit and compliance readiness with ISO/NIST mapping
-
----
-
-## 📁 Project Structure
+## Project Structure
 

@@ -1,0 +1,38 @@
+/*
+ * ProvisioningRule.bsh
+ * This rule is triggered when an identity is provisioned to the target system.
+ * It assigns entitlements based on department and job title.
+ */
+
+import sailpoint.object.Identity;
+import sailpoint.object.Application;
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.object.ProvisioningPlan.AccountRequest;
+import java.util.*;
+
+Identity identity = (Identity) context.getObjectByName(Identity.class, identityName);
+ProvisioningPlan plan = new ProvisioningPlan();
+
+String department = identity.getAttribute("department");
+String title = identity.getAttribute("title");
+
+String entitlement = null;
+
+// Assign entitlement based on department
+if ("Finance".equalsIgnoreCase(department)) {
+    entitlement = "FINANCE_APP_ACCESS";
+} else if ("Engineering".equalsIgnoreCase(department)) {
+    entitlement = "DEV_TOOLKIT_ACCESS";
+} else {
+    entitlement = "BASIC_USER_ACCESS";
+}
+
+// Create an account request for the entitlement
+AccountRequest accReq = new AccountRequest();
+accReq.setOperation(AccountRequest.Operation.Modify);
+accReq.addEntitlement("entitlement", entitlement);
+
+plan.add(accReq);
+
+return plan;
+

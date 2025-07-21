@@ -1,0 +1,25 @@
+/*
+ * IdentityCreationRule.bsh
+ * Initializes default attributes when a new identity is created.
+ */
+
+import sailpoint.object.Identity;
+
+Identity identity = (Identity) ruleContext.getArguments().get("identity");
+
+String department = (String) identity.getAttribute("department");
+
+if (department != null) {
+    if (department.equalsIgnoreCase("Engineering")) {
+        identity.setAttribute("location", "Palo Alto");
+        identity.setAttribute("costCenter", "ENG-1001");
+    } else if (department.equalsIgnoreCase("Finance")) {
+        identity.setAttribute("location", "New York");
+        identity.setAttribute("costCenter", "FIN-2001");
+    } else {
+        identity.setAttribute("location", "Remote");
+        identity.setAttribute("costCenter", "GEN-0000");
+    }
+}
+
+return identity;

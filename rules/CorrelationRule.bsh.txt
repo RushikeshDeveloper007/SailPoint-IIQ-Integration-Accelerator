@@ -1,0 +1,21 @@
+/*
+ * CorrelationRule.bsh
+ * Determines if an incoming account matches an existing identity based on email.
+ */
+
+import sailpoint.object.Identity;
+import sailpoint.object.ResourceObject;
+
+String identityName = null;
+
+String accountEmail = account.getAttribute("email");
+
+if (accountEmail != null) {
+    List identities = context.getObjects(Identity.class, "email == \"" + accountEmail + "\"");
+    if (identities != null && identities.size() == 1) {
+        Identity matchedIdentity = (Identity) identities.get(0);
+        identityName = matchedIdentity.getName();
+    }
+}
+
+return identityName;

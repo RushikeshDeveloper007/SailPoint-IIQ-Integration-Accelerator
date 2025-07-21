@@ -1,0 +1,33 @@
+/*
+ * dsar-response-generator.java
+ * Simulates generating a DSAR (Data Subject Access Request) response.
+ * Outputs identity and access data for GDPR/CCPA compliance reporting.
+ */
+
+import java.util.*;
+
+public class DSARResponseGenerator {
+
+    public static void main(String[] args) {
+        Map<String, Object> identity = getIdentity("u001");
+
+        System.out.println("DSAR Report for: " + identity.get("name"));
+        System.out.println("Email: " + identity.get("email"));
+        System.out.println("Department: " + identity.get("department"));
+        System.out.println("Entitlements: " + identity.get("entitlements"));
+        System.out.println("Applications: " + identity.get("apps"));
+        System.out.println("Last Login: " + identity.get("lastLogin"));
+    }
+
+    private static Map<String, Object> getIdentity(String id) {
+        Map<String, Object> identity = new HashMap<>();
+        identity.put("id", id);
+        identity.put("name", "Alice Johnson");
+        identity.put("email", "alice.johnson@example.com");
+        identity.put("department", "Engineering");
+        identity.put("entitlements", Arrays.asList("DEV_TOOLKIT_ACCESS", "GITHUB_ACCESS"));
+        identity.put("apps", Arrays.asList("Jira", "GitHub", "AWS Console"));
+        identity.put("lastLogin", "2025-07-20T09:15:00Z");
+        return identity;
+    }
+}

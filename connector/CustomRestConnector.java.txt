@@ -1,0 +1,58 @@
+/*
+ * CustomRestConnector.java
+ * Simulates a custom SailPoint IIQ connector that calls REST APIs to create, update, or disable accounts.
+ */
+
+import sailpoint.connector.Connector;
+import sailpoint.object.ResourceObject;
+import sailpoint.object.Attributes;
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.tools.GeneralException;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CustomRestConnector implements Connector {
+
+    private String endpoint;
+    private String apiToken;
+
+    @Override
+    public void configure(Attributes<String, Object> config) throws GeneralException {
+        this.endpoint = (String) config.get("endpoint");
+        this.apiToken = (String) config.get("apiToken");
+    }
+
+    @Override
+    public void testConfiguration() throws GeneralException {
+        // Simulate testing connection to target REST API
+        System.out.println("Testing connection to: " + endpoint);
+    }
+
+    @Override
+    public ResourceObject read(String identity) throws GeneralException {
+        // Simulate fetching user data
+        ResourceObject resource = new ResourceObject();
+        resource.setIdentity(identity);
+        resource.put("status", "active");
+        return resource;
+    }
+
+    @Override
+    public void create(ResourceObject resource) throws GeneralException {
+        // Simulate API call to create a user
+        System.out.println("Creating user in target system: " + resource.getIdentity());
+    }
+
+    @Override
+    public void update(ResourceObject resource) throws GeneralException {
+        // Simulate API call to update user attributes
+        System.out.println("Updating user: " + resource.getIdentity());
+    }
+
+    @Override
+    public void delete(ResourceObject resource) throws GeneralException {
+        // Simulate API call to disable or delete user
+        System.out.println("Disabling user: " + resource.getIdentity());
+    }
+}

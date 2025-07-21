@@ -4,7 +4,9 @@
 
 # SailPoint IIQ Integration Accelerator
 
-An enterprise-grade SailPoint IdentityIQ integration project that simulates real-world identity governance, provisioning automation, and compliance workflows.
+An enterprise-grade SailPoint IdentityIQ integration project that simulates real-world identity governance, provisioning automation, and compliance workflows. Built to showcase expertise in SailPoint engineering, lifecycle orchestration, access reviews, and DSAR compliance for privacy regulations.
+
+---
 
 ## 🔑 What's Included
 
@@ -15,10 +17,16 @@ An enterprise-grade SailPoint IdentityIQ integration project that simulates real
 - DSAR Generator – Script to simulate privacy compliance (GDPR, CCPA)
 - RBAC Role Modeling – JSON-based business-aligned access structure
 - Access Review Template – Sample review campaign to simulate certification
+- IAM Audit Summary – Mock audit report validating access controls and compliance readiness
+
+---
 
 ## 📁 Project Structure
 
+├── docs/
+│   ├── rbac-role-model.json
+│   ├── access-review-template.json
+│   ├── IAM-Audit-Summary.pdf
+│   └── screenshots/
 
-
-## Project Structure
 

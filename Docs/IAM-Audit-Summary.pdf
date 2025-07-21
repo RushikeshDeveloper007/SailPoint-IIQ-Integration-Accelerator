@@ -1,0 +1,35 @@
+IAM Audit Summary Report
+Project: SailPoint IIQ Integration Accelerator
+Prepared by: Rushikesh Bommineni
+Date: July 21, 2025
+Purpose: Simulate an internal IAM audit focused on access provisioning, lifecycle governance, and privacy compliance readiness.
+
+Key Components Reviewed:
+Provisioning Rules: Verified Beanshell scripts follow least-privilege principle
+
+RBAC Model: Checked JSON role mappings for overlap and SoD (Segregation of Duties)
+
+DSAR Workflows: Simulated GDPR/CCPA requests and confirmed proper identity traceability
+
+Access Reviews: Sample review template aligns with ISO 27001 & SOX quarterly reviews
+
+Observations:
+Control Area	Status	Comments
+Joiner-Mover-Leaver	Passed	JML automation covers core HR events
+Custom REST Connector	Passed	Integration tested with mock API
+Role Engineering	Needs Tuning	Some roles may need clearer job-function separation
+DSAR Handling	Passed	JSON generator handles data exports well
+Certification Template	Passed	Campaign structure supports periodic reviews
+
+📂 Supporting Artifacts:
+/rules/ProvisioningRule.bsh
+
+/docs/rbac-role-model.json
+
+/docs/access-review-template.json
+
+/scripts/dsar-generator.py
+
+Audit Conclusion:
+The integration accelerator demonstrates a scalable, governance-ready IAM foundation. Further enhancements may include separation of SoD roles and real-time audit logging for entitlement changes.
+

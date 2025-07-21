@@ -1,0 +1,45 @@
+<!-- Joiner-Mover-Leaver Workflow -->
+<Workflow name="JoinerMoverLeaver">
+  <Description>
+    A simplified JML workflow that triggers provisioning for new users,
+    modifies access for movers, and disables accounts for leavers.
+  </Description>
+  
+  <Variable name="identity" type="Identity"/>
+
+  <Step name="DetectEvent">
+    <Description>Check for Joiner, Mover, or Leaver event</Description>
+    <Rule name="DetectJMLEvent"/>
+    <Transition to="JoinerAction" if="event == 'joiner'"/>
+    <Transition to="MoverAction" if="event == 'mover'"/>
+    <Transition to="LeaverAction" if="event == 'leaver'"/>
+  </Step>
+
+  <Step name="JoinerAction">
+    <Description>Provision access for new joiner</Description>
+    <Script>
+      // call provisioning rule or policy
+    </Script>
+    <Transition to="End"/>
+  </Step>
+
+  <Step name="MoverAction">
+    <Description>Update access for mover</Description>
+    <Script>
+      // update entitlements, roles, or location
+    </Script>
+    <Transition to="End"/>
+  </Step>
+
+  <Step name="LeaverAction">
+    <Description>Disable access for leaver</Description>
+    <Script>
+      // disable accounts, trigger revocation
+    </Script>
+    <Transition to="End"/>
+  </Step>
+
+  <Step name="End">
+    <Description>Workflow completed</Description>
+  </Step>
+</Workflow>

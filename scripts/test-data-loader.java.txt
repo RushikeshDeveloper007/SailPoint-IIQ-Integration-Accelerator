@@ -1,0 +1,43 @@
+/*
+ * test-data-loader.java
+ * Simulates creating sample identity records for testing provisioning and correlation.
+ */
+
+import java.util.*;
+
+public class TestDataLoader {
+
+    public static void main(String[] args) {
+        List<Map<String, String>> sampleUsers = generateUsers();
+
+        for (Map<String, String> user : sampleUsers) {
+            System.out.println("Generated user:");
+            System.out.println("ID: " + user.get("id"));
+            System.out.println("Name: " + user.get("name"));
+            System.out.println("Email: " + user.get("email"));
+            System.out.println("Department: " + user.get("department"));
+            System.out.println("Title: " + user.get("title"));
+            System.out.println("------------------------------");
+        }
+    }
+
+    private static List<Map<String, String>> generateUsers() {
+        List<Map<String, String>> users = new ArrayList<>();
+
+        users.add(createUser("u001", "Alice Johnson", "alice.johnson@example.com", "Engineering", "Developer"));
+        users.add(createUser("u002", "Bob Singh", "bob.singh@example.com", "Finance", "Analyst"));
+        users.add(createUser("u003", "Cathy Brown", "cathy.brown@example.com", "HR", "Manager"));
+
+        return users;
+    }
+
+    private static Map<String, String> createUser(String id, String name, String email, String department, String title) {
+        Map<String, String> user = new HashMap<>();
+        user.put("id", id);
+        user.put("name", name);
+        user.put("email", email);
+        user.put("department", department);
+        user.put("title", title);
+        return user;
+    }
+}

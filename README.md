@@ -1,3 +1,7 @@
+![Java](https://img.shields.io/badge/Built%20With-Java-blue)
+![Last Commit](https://img.shields.io/github/last-commit/RushikeshDeveloper007/SailPoint-IIQ-Integration-Accelerator)
+![Status](https://img.shields.io/badge/Project-Active-brightgreen)
+
 # SailPoint IIQ Integration Accelerator
 
 An enterprise-grade SailPoint IdentityIQ integration project that simulates real-world identity governance, provisioning automation, and compliance workflows.

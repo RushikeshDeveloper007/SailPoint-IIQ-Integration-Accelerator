@@ -1,0 +1,17 @@
+{
+  "current": "DEV",
+  "environments": {
+    "DEV": {
+      "url": "http://dev.identityiq.local",
+      "username": "dev_admin"
+    },
+    "QA": {
+      "url": "http://qa.identityiq.local",
+      "username": "qa_admin"
+    },
+    "PROD": {
+      "url": "https://identityiq.company.com",
+      "username": "prod_admin"
+    }
+  }
+}

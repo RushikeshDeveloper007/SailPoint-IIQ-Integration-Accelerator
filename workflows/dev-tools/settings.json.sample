@@ -1,0 +1,12 @@
+#!/bin/bash
+# Compares a local file with the server version using diff
+
+if [ -z "$1" ]; then
+  echo "Usage: ./iiq-diff.sh path/to/local-file.xml"
+  exit 1
+fi
+
+LOCAL_FILE=$1
+SERVER_FILE="/opt/sailpoint/identityiq/deployed/$(basename $1)"
+
+diff $LOCAL_FILE $SERVER_FILE

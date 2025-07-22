@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rule name="ProvisioningRule" type="Provisioning">
+  <Description>Sample provisioning logic for new hires</Description>
+  <Source>
+    <![CDATA[
+      if (identity.getAttribute("department") == "Engineering") {
+          plan.add(new ProvisioningPlan.AccountRequest("GitHub", ProvisioningPlan.Operation.Create));
+      }
+    ]]>
+  </Source>
+</Rule>

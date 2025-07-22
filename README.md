@@ -32,6 +32,8 @@ Simulates deployment of a rule or object to IIQ.
 
 ```bash
 $ ./workflows/dev-tools/iiq-deploy.sh rules/ProvisioningRule.xml
-🚀 Simulating deployment of rules/ProvisioningRule.xml to SailPoint IdentityIQ...
+ Simulating deployment of rules/ProvisioningRule.xml to SailPoint IdentityIQ...
 ✅ Mock deploy completed successfully.
+
+
 

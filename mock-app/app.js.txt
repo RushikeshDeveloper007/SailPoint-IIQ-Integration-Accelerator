@@ -9,9 +9,20 @@ let mockDB = {};
 
 app.post('/createUser', (req, res) => {
   const { id, name, department } = req.body;
+
+  // Validate required fields
+  if (!id || !name || !department) {
+    return res.status(400).send({ error: 'Missing required fields' });
+  }
+
+  // Prevent accidental overwrite when the user already exists
+  if (mockDB[id]) {
+    return res.status(409).send({ error: 'User already exists' });
+  }
+
   mockDB[id] = { name, department, status: 'active' };
   console.log(`User created: ${id}`);
-  res.send({ status: 'success', id });
+  res.status(201).send({ status: 'success', id });
 });
 
 app.put('/updateUser/:id', (req, res) => {

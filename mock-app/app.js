@@ -47,4 +47,8 @@ app.delete('/deleteUser/:id', (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Mock app running on http://localhost:3000'));
+module.exports = app;
+
+if (require.main === module) {
+  app.listen(3000, () => console.log('Mock app running on http://localhost:3000'));
+}
